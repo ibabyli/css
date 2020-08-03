@@ -1,0 +1,135 @@
+1、CSS简介
+	* CSS：层叠样式表
+		** 层叠：一层一层的
+		** 样式表：
+				很多的属性和属性值
+			
+		* 使页面显示效果更好
+		* CSS将网页内容和显示样式进行分离，提高了显示功能。
+
+2、css和html的结合方式（四种结合方式）
+	（1）在每个HTML标签上面都有一个属性 style，把css和HTML结合在一起
+		- <div style="background-color:red;color:blue;">我是一只小小鸟</div>
+	（2）使用HTML的一个标签实现，<style>标签：写在head里面
+		* <style type="text/css">
+			css代码;
+		  </style>
+
+		<style type="text/css">
+			div {
+				background-color:red;
+				color:gray;
+			}
+		</style>
+	（3）在style标签里面 使用语句（在某些浏览器下不起作用）
+		@import url(css文件路径);
+
+		- 第一步：创建一个css文件
+		- <style type="text/css">
+			@import url(div.css);
+		</style>
+
+	（4）使用头标签link，引入外部css文件
+		- 第一步：创建一个css文件
+		- <link rel="stylesheet" type="text/css" href="div.css"/>
+
+		*** 第三种结合方式缺点：在某些浏览器下不起作用，一般使用第四种方式
+		
+		*** 优先级（一般情况）
+			由上到下，由外到内，优先级由低到高
+			*** 后加载的优先级高
+		*** 格式	选择器名称 {属性名:属性值; 属性名:属性值; ......}
+
+3、css的基本选择器（三种）
+
+	** 要对哪个标签里面的数据进行操作
+
+	（1）标签选择器
+		div {
+				background-color:red;
+				color:blue;
+			}
+	（2）class选择器
+		* 每个HTML标签中都有一个属性 class
+			- <div class="haha">愿有岁月可回首，且以深情共白头！</div>
+			- .haha {
+				background-color:blue;
+			}
+	（3）id选择器
+		* 每个HTML标签中都有一个属性 id
+		- <div id="hehe">愿有岁月可回首，且以深情共白头！</div>
+		- #hehe {
+				background-color:blue;
+			}
+
+	*** 基本选择器的优先级
+		style > id选择器 > class选择器 > 标签选择器
+
+4、css的扩展选择器
+	（1）关联选择器
+		* <div><p>aaaaaaaaaaaa</p></div>
+		* 设置div标签里面p标签的样式，嵌套标签里面的样式
+		* div p{
+				background-color:blue;
+			}
+	（2） 组合选择器
+		* <div>aaaaaaaaaaaa</div>
+		  <p>bbbbbbbbb</p>
+		* 把div和p标签设置成相同的样式，把不同的标签设置成为相同的样式
+		* div,p{
+				background-color:blue;
+			}
+
+	（3）伪元素选择器（了解）
+		* css里面提供了一些定义好的样式，可以拿过来使用
+		* 比如超链接
+			** 超链接的状态
+				原始状态	鼠标放上去的状态	点击	点击之后
+				:link			:hover			:active		:visited
+			*** 记忆的方法
+				lv ha
+		
+		
+5、css的盒子模型
+	** 在进行布局前需要把数据封装到一块一块的区域内（div）
+
+	（1）边框
+		border:2px solid blue;
+		border：统一设置
+		上：border-top
+		下：border-bottom
+		左：border-left
+		右：border-right
+
+	（2）内边距
+		padding:20px;
+		padding：统一设置
+		上：padding-top
+		下：paddingr-bottom
+		左：padding-left
+		右：padding-right
+		上下左右四个内边距
+	（3）外边距
+		margin:20px;
+		margin：统一设置
+		上：margin-top
+		下：margin-bottom
+		左：margin-left
+		右：margin-right
+		上下左右四个外边距
+
+6、css的布局的漂浮（了解）
+	float
+		** 属性值
+			left: 文本流向对象的右边
+			right:文本流向对象的左边
+
+7、css的布局的定位
+	position:	
+		** 属性值
+			- absolute：
+				*** 将对象从文档流中拖出
+				*** 可以是top、bottom等属性进行定位
+			- relative：
+				*** 不会将对象从文档流中拖出
+				*** 可以是top、bottom等属性进行定位
